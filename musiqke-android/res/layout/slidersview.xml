@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android" android:tag="sliders"  android:layout_width="wrap_content" android:layout_height="wrap_content">
+      <TableRow>
+          <com.rj.musiqke.OSCSeekBar android:tag="slider1" style="@style/Slider"></com.rj.musiqke.OSCSeekBar>
+          <com.rj.musiqke.OSCToggleButton android:tag="slidertoggle1" android:textOn="Q" android:textOff="Q" style="@style/Button.Medium"></com.rj.musiqke.OSCToggleButton>
+      </TableRow>
+
+      <TableRow>
+          <com.rj.musiqke.OSCSeekBar android:tag="slider2" style="@style/Slider"></com.rj.musiqke.OSCSeekBar>
+          <com.rj.musiqke.OSCToggleButton android:tag="slidertoggle2" android:textOn="Cutoff" android:textOff="Cutoff" style="@style/Button.Medium"></com.rj.musiqke.OSCToggleButton>
+      </TableRow>
+
+      <TableRow>
+          <com.rj.musiqke.OSCSeekBar android:tag="slider3" style="@style/Slider"></com.rj.musiqke.OSCSeekBar>
+          <com.rj.musiqke.OSCToggleButton android:tag="slidertoggle3" android:textOn="" android:textOff="" style="@style/Button.Medium"></com.rj.musiqke.OSCToggleButton>
+      </TableRow>
+
+      <TableRow>
+          <com.rj.musiqke.OSCSeekBar android:tag="slider4" style="@style/Slider"></com.rj.musiqke.OSCSeekBar>
+          <com.rj.musiqke.OSCToggleButton android:tag="slidertoggle4" android:textOn="" android:textOff="" style="@style/Button.Medium"></com.rj.musiqke.OSCToggleButton>
+      </TableRow>
+
+      <TableRow>
+          <com.rj.musiqke.OSCSeekBar android:tag="slider5" style="@style/Slider"></com.rj.musiqke.OSCSeekBar>
+          <com.rj.musiqke.OSCToggleButton android:tag="slidertoggle5" android:textOn="" android:textOff="" style="@style/Button.Medium"></com.rj.musiqke.OSCToggleButton>
+      </TableRow>
+
+      <TableRow>
+          <com.rj.musiqke.OSCSeekBar android:tag="slider6" style="@style/Slider"></com.rj.musiqke.OSCSeekBar>
+          <com.rj.musiqke.OSCToggleButton android:tag="slidertoggle6" android:textOn="" android:textOff="" style="@style/Button.Medium"></com.rj.musiqke.OSCToggleButton>
+      </TableRow>
+
+      <TableRow>
+          <com.rj.musiqke.OSCSeekBar android:tag="slider7" style="@style/Slider"></com.rj.musiqke.OSCSeekBar>
+          <com.rj.musiqke.OSCToggleButton android:tag="slidertoggle7" android:textOn="" android:textOff="" style="@style/Button.Medium"></com.rj.musiqke.OSCToggleButton>
+      </TableRow>
+
+      <TableRow>
+          <com.rj.musiqke.OSCSeekBar android:tag="slider8" style="@style/Slider"></com.rj.musiqke.OSCSeekBar>
+          <com.rj.musiqke.OSCToggleButton android:tag="slidertoggle8" android:textOn="" android:textOff="" style="@style/Button.Medium"></com.rj.musiqke.OSCToggleButton>
+      </TableRow>
+
+  </TableLayout>

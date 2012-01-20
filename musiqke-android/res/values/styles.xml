@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Button">
+            <!-- <item name="android:background">@android:drawable/btn_default</item> -->
+    </style>
+    <style name="Button.Big">
+        <item name="android:layout_width">100dip</item>
+        <item name="android:layout_height">100dip</item>
+       	<item name="android:textSize">16dip</item>
+    </style>
+    <style name="Button.Medium">
+        <item name="android:layout_width">100dip</item>
+        <item name="android:layout_height">70dip</item>
+       	<item name="android:textSize">14dip</item>
+    </style>
+    
+    <style name="Slider">
+        <item name="android:layout_width">400dip</item>
+        <item name="android:layout_height">70dip</item>
+        <item name="android:padding">15dip</item>
+    </style>
+    
+        
+    <style name="Slider2">
+        <item name="android:layout_width">240dip</item>
+        <item name="android:layout_height">60dip</item>
+        <item name="android:layout_marginTop">-10dip</item>
+            <item name="android:padding">15dip</item>
+    </style>
+    
+        
+        
+    <style name="Text">
+            <!-- <item name="android:background">@android:drawable/btn_default</item> -->
+    </style>
+    <style name="Text.SliderLabel">
+        <item name="android:layout_width">100dip</item>
+        <item name="android:layout_height">20dip</item>
+       	<item name="android:textSize">14dip</item>
+       	<item name="android:gravity">center</item>
+    </style>    
+</resources>
+

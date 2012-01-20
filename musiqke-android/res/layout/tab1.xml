@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/relativeLayout1" android:layout_width="match_parent" android:layout_height="match_parent">
+    
+	<RadioGroup xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="horizontal" android:tag="presets" android:id="@+id/presets1"  android:layout_alignParentTop="true" android:layout_width="wrap_content" android:layout_height="wrap_content">
+	    <com.rj.musiqke.OSCRadioButton android:tag="1" android:text="1\nepic" style="@style/Button.Big"></com.rj.musiqke.OSCRadioButton>
+	    <com.rj.musiqke.OSCRadioButton android:tag="2" android:text="2\nncool" style="@style/Button.Big"></com.rj.musiqke.OSCRadioButton>
+	    <com.rj.musiqke.OSCRadioButton android:tag="3" android:text="3\nnotsure" style="@style/Button.Big"></com.rj.musiqke.OSCRadioButton>
+	    <com.rj.musiqke.OSCRadioButton android:tag="4" android:text="4\nnotsure" style="@style/Button.Big"></com.rj.musiqke.OSCRadioButton>
+	    <com.rj.musiqke.OSCRadioButton android:tag="5" android:text="5\nwomp1" style="@style/Button.Big"></com.rj.musiqke.OSCRadioButton>
+	    <com.rj.musiqke.OSCRadioButton android:tag="6" android:text="6\nnormal" style="@style/Button.Big"></com.rj.musiqke.OSCRadioButton>
+	    <com.rj.musiqke.OSCRadioButton android:tag="7" android:text="7\nhxc" style="@style/Button.Big"></com.rj.musiqke.OSCRadioButton>
+	    <com.rj.musiqke.OSCRadioButton android:tag="8" android:text="8\nwomp2" style="@style/Button.Big"></com.rj.musiqke.OSCRadioButton>
+	</RadioGroup>
+
+	<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/sliders1"
+		android:layout_alignParentRight="true"
+		android:layout_alignParentBottom="true" android:tag="sliders"
+		android:layout_width="wrap_content" android:layout_height="wrap_content">
+	      <TableRow>
+	          <com.rj.musiqke.OSCSeekBar android:tag="slider1" style="@style/Slider"></com.rj.musiqke.OSCSeekBar>
+	          <com.rj.musiqke.OSCToggleButton android:tag="slidertoggle1" android:textOn="Q" android:textOff="Q" style="@style/Button.Medium"></com.rj.musiqke.OSCToggleButton>
+	      </TableRow>
+	
+	      <TableRow>
+	          <com.rj.musiqke.OSCSeekBar android:tag="slider2" style="@style/Slider"></com.rj.musiqke.OSCSeekBar>
+	          <com.rj.musiqke.OSCToggleButton android:tag="slidertoggle2" android:textOn="Cutoff" android:textOff="Cutoff" style="@style/Button.Medium"></com.rj.musiqke.OSCToggleButton>
+	      </TableRow>
+	
+	      <TableRow>
+	          <com.rj.musiqke.OSCSeekBar android:tag="slider3" style="@style/Slider"></com.rj.musiqke.OSCSeekBar>
+	          <com.rj.musiqke.OSCToggleButton android:tag="slidertoggle3" android:textOn="Disto" android:textOff="Disto" style="@style/Button.Medium"></com.rj.musiqke.OSCToggleButton>
+	      </TableRow>
+	
+	      <TableRow>
+	          <com.rj.musiqke.OSCSeekBar android:tag="slider4" style="@style/Slider"></com.rj.musiqke.OSCSeekBar>
+	          <com.rj.musiqke.OSCToggleButton android:tag="slidertoggle4" android:textOn="Vol" android:textOff="Vol" style="@style/Button.Medium"></com.rj.musiqke.OSCToggleButton>
+	      </TableRow>
+	
+	      <TableRow>
+	          <com.rj.musiqke.OSCSeekBar android:tag="slider5" style="@style/Slider"></com.rj.musiqke.OSCSeekBar>
+	          <com.rj.musiqke.OSCToggleButton android:tag="slidertoggle5" android:textOn="" android:textOff="" style="@style/Button.Medium"></com.rj.musiqke.OSCToggleButton>
+	      </TableRow>
+	
+	      <TableRow>
+	          <com.rj.musiqke.OSCSeekBar android:tag="slider6" style="@style/Slider"></com.rj.musiqke.OSCSeekBar>
+	          <com.rj.musiqke.OSCToggleButton android:tag="slidertoggle6" android:textOn="ScpMix" android:textOff="ScpMix" style="@style/Button.Medium"></com.rj.musiqke.OSCToggleButton>
+	      </TableRow>
+	
+	      <TableRow>
+	          <com.rj.musiqke.OSCSeekBar android:tag="slider7" style="@style/Slider"></com.rj.musiqke.OSCSeekBar>
+	          <com.rj.musiqke.OSCToggleButton android:tag="slidertoggle7" android:textOn="ScpBPM" android:textOff="ScpBPM" style="@style/Button.Medium"></com.rj.musiqke.OSCToggleButton>
+	      </TableRow>
+	
+	      <TableRow>
+	          <com.rj.musiqke.OSCSeekBar android:tag="slider8" style="@style/Slider"></com.rj.musiqke.OSCSeekBar>
+	          <com.rj.musiqke.OSCToggleButton android:tag="slidertoggle8" android:textOn="ScpFBK" android:textOff="ScpFBK" style="@style/Button.Medium"></com.rj.musiqke.OSCToggleButton>
+	      </TableRow>
+  </TableLayout>
+ 	 	
+  <com.rj.musiqke.OSCXYBox xmlns:android="http://schemas.android.com/apk/res/android"  android:tag="sliders" android:layout_margin="10dip" android:layout_alignParentLeft="true" android:layout_below="@+id/presets1" android:layout_toLeftOf="@+id/sliders1" android:layout_width="match_parent" android:layout_height="match_parent"/>
+</RelativeLayout>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/relativeLayout1" android:layout_width="match_parent" android:layout_height="match_parent">
+    
+	<RadioGroup xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="horizontal" android:tag="presets" android:id="@+id/presets1"  android:layout_alignParentTop="true" android:layout_width="wrap_content" android:layout_height="wrap_content">
+	    <com.rj.musiqke.OSCRadioButton android:tag="1" android:text="1\nepic" style="@style/Button.Big"></com.rj.musiqke.OSCRadioButton>
+	    <com.rj.musiqke.OSCRadioButton android:tag="2" android:text="2\nncool" style="@style/Button.Big"></com.rj.musiqke.OSCRadioButton>
+	    <com.rj.musiqke.OSCRadioButton android:tag="3" android:text="3\nnotsure" style="@style/Button.Big"></com.rj.musiqke.OSCRadioButton>
+	    <com.rj.musiqke.OSCRadioButton android:tag="4" android:text="4\nnotsure" style="@style/Button.Big"></com.rj.musiqke.OSCRadioButton>
+	    <com.rj.musiqke.OSCRadioButton android:tag="5" android:text="5\nwomp1" style="@style/Button.Big"></com.rj.musiqke.OSCRadioButton>
+	    <com.rj.musiqke.OSCRadioButton android:tag="6" android:text="6\nnormal" style="@style/Button.Big"></com.rj.musiqke.OSCRadioButton>
+	    <com.rj.musiqke.OSCRadioButton android:tag="7" android:text="7\nhxc" style="@style/Button.Big"></com.rj.musiqke.OSCRadioButton>
+	    <com.rj.musiqke.OSCRadioButton android:tag="8" android:text="8\nwomp2" style="@style/Button.Big"></com.rj.musiqke.OSCRadioButton>
+	    <com.rj.musiqke.OSCRadioButton android:tag="9" android:text="9\n?" style="@style/Button.Big"></com.rj.musiqke.OSCRadioButton>
+	    <com.rj.musiqke.OSCRadioButton android:tag="10" android:text="10\n?" style="@style/Button.Big"></com.rj.musiqke.OSCRadioButton>
+	    <com.rj.musiqke.OSCRadioButton android:tag="11" android:text="11\n?" style="@style/Button.Big"></com.rj.musiqke.OSCRadioButton>
+	    <com.rj.musiqke.OSCRadioButton android:tag="12" android:text="12\n?" style="@style/Button.Big"></com.rj.musiqke.OSCRadioButton>
+	    	</RadioGroup>
+
+	<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/sliders1"
+		android:layout_alignParentRight="true"
+		android:layout_alignParentBottom="true" android:tag="sliders"
+		android:layout_width="wrap_content" android:layout_height="wrap_content">
+
+	    
+	      <TableRow>
+	          <TextView android:text="Q" style="@style/Text.SliderLabel"></TextView>
+	          <TextView android:text="Vibrato Speed" style="@style/Text.SliderLabel"></TextView>
+	      </TableRow>	   
+	      <TableRow>
+	          <com.rj.musiqke.OSCSeekBar android:tag="slider1" style="@style/Slider2"></com.rj.musiqke.OSCSeekBar>
+	          <com.rj.musiqke.OSCSeekBar android:tag="slider9" style="@style/Slider2"></com.rj.musiqke.OSCSeekBar>
+	      </TableRow>
+
+	      <TableRow>
+	          <TextView android:text="Cutoff" style="@style/Text.SliderLabel"></TextView>
+	          <TextView android:text="Vibrato Depth" style="@style/Text.SliderLabel"></TextView>
+	      </TableRow>	   
+	      <TableRow>
+	          <com.rj.musiqke.OSCSeekBar android:tag="slider2" style="@style/Slider2"></com.rj.musiqke.OSCSeekBar>
+	          <com.rj.musiqke.OSCSeekBar android:tag="slider10" style="@style/Slider2"></com.rj.musiqke.OSCSeekBar>
+	      </TableRow>	          
+	          
+	      <TableRow>
+	          <TextView android:text="Volume" style="@style/Text.SliderLabel"></TextView>
+	          <TextView android:text="Delay Time" style="@style/Text.SliderLabel"></TextView>
+	      </TableRow>	   
+	      <TableRow>
+	          <com.rj.musiqke.OSCSeekBar android:tag="slider3" style="@style/Slider2"></com.rj.musiqke.OSCSeekBar>
+	          <com.rj.musiqke.OSCSeekBar android:tag="slider11" style="@style/Slider2"></com.rj.musiqke.OSCSeekBar>
+	      </TableRow>	          
+	          
+	      <TableRow>
+	          <TextView android:text="Bitcrush Mix" style="@style/Text.SliderLabel"></TextView>
+	          <TextView android:text="Delay Mix" style="@style/Text.SliderLabel"></TextView>
+	      </TableRow>	   
+	      <TableRow>
+	          <com.rj.musiqke.OSCSeekBar android:tag="slider4" style="@style/Slider2"></com.rj.musiqke.OSCSeekBar>
+	          <com.rj.musiqke.OSCSeekBar android:tag="slider12" style="@style/Slider2"></com.rj.musiqke.OSCSeekBar>
+	      </TableRow>	          
+	          
+	      <TableRow>
+	          <TextView android:text="Bitcrush Depth" style="@style/Text.SliderLabel"></TextView>
+	          <TextView android:text="Delay Feedback" style="@style/Text.SliderLabel"></TextView>
+	      </TableRow>	   
+	      <TableRow>
+	          <com.rj.musiqke.OSCSeekBar android:tag="slider5" style="@style/Slider2"></com.rj.musiqke.OSCSeekBar>
+	          <com.rj.musiqke.OSCSeekBar android:tag="slider13" style="@style/Slider2"></com.rj.musiqke.OSCSeekBar>
+	      </TableRow>
+	      
+	      <TableRow>
+	          <TextView android:text="Distortion" style="@style/Text.SliderLabel"></TextView>
+	          <TextView android:text="Reverb Time" style="@style/Text.SliderLabel"></TextView>
+	      </TableRow>	   
+	      <TableRow>
+	          <com.rj.musiqke.OSCSeekBar android:tag="slider6" style="@style/Slider2"></com.rj.musiqke.OSCSeekBar>
+	          <com.rj.musiqke.OSCSeekBar android:tag="slider14" style="@style/Slider2"></com.rj.musiqke.OSCSeekBar>
+	      </TableRow>
+	      
+	      <TableRow>
+	          <TextView android:text="Tremolo Speed" style="@style/Text.SliderLabel"></TextView>
+	          <TextView android:text="Reverb Mix" style="@style/Text.SliderLabel"></TextView>
+	      </TableRow>	   
+	      <TableRow>
+	          <com.rj.musiqke.OSCSeekBar android:tag="slider7" style="@style/Slider2"></com.rj.musiqke.OSCSeekBar>
+	          <com.rj.musiqke.OSCSeekBar android:tag="slider15" style="@style/Slider2"></com.rj.musiqke.OSCSeekBar>
+	      </TableRow>
+	      
+	          
+	      <TableRow>
+	          <TextView android:text="Tremolo Depth" style="@style/Text.SliderLabel"></TextView>
+	          <TextView android:text="Reverb Feedback" style="@style/Text.SliderLabel"></TextView>
+	      </TableRow>	   
+	      <TableRow>
+	          <com.rj.musiqke.OSCSeekBar android:tag="slider8" style="@style/Slider2"></com.rj.musiqke.OSCSeekBar>
+	          <com.rj.musiqke.OSCSeekBar android:tag="slider16" style="@style/Slider2"></com.rj.musiqke.OSCSeekBar>
+	      </TableRow>	          	          
+	          
+	          	          
+	          
+	          
+	          
+	          
+  </TableLayout>
+ 	 	
+  <com.rj.musiqke.OSCXYBox xmlns:android="http://schemas.android.com/apk/res/android"  android:tag="sliders" android:layout_margin="10dip" android:layout_alignParentLeft="true" android:layout_below="@+id/presets1" android:layout_toLeftOf="@+id/sliders1" android:layout_width="match_parent" android:layout_height="match_parent"/>
+</RelativeLayout>

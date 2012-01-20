@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioGroup xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+    <com.rj.musiqke.OSCRadioButton android:tag="1" android:text="1" style="@style/Button.Big"></com.rj.musiqke.OSCRadioButton>
+    <com.rj.musiqke.OSCRadioButton android:tag="2" android:text="2" style="@style/Button.Big"></com.rj.musiqke.OSCRadioButton>
+    <com.rj.musiqke.OSCRadioButton android:tag="3" android:text="3" style="@style/Button.Big"></com.rj.musiqke.OSCRadioButton>
+    <com.rj.musiqke.OSCRadioButton android:tag="4" android:text="4\ncool" style="@style/Button.Big"></com.rj.musiqke.OSCRadioButton>
+    <com.rj.musiqke.OSCRadioButton android:tag="5" android:text="5\nwomp1" style="@style/Button.Big"></com.rj.musiqke.OSCRadioButton>
+    <com.rj.musiqke.OSCRadioButton android:tag="6" android:text="6\nnormal" style="@style/Button.Big"></com.rj.musiqke.OSCRadioButton>
+    <com.rj.musiqke.OSCRadioButton android:tag="7" android:text="7\nhxc" style="@style/Button.Big"></com.rj.musiqke.OSCRadioButton>
+    <com.rj.musiqke.OSCRadioButton android:tag="8" android:text="8\nwomp2" style="@style/Button.Big"></com.rj.musiqke.OSCRadioButton>
+</RadioGroup>

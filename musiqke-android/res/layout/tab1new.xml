@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/relativeLayout1" android:layout_width="match_parent" android:layout_height="match_parent">
+    <fragment android:name="com.rj.musiqke.frags.RadioFragment" android:tag="presets1" android:id="@+id/presets1"  android:layout_alignParentTop="true" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+ 	<fragment android:name="com.rj.musiqke.frags.SlidersFragment" android:tag="sliders1" android:id="@+id/sliders1" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <fragment android:name="com.rj.musiqke.frags.XYFragment" android:tag="xybox" android:layout_margin="10dip" android:layout_alignParentLeft="true" android:layout_below="@+id/presets1" android:layout_toLeftOf="@+id/sliders1" android:layout_width="match_parent" android:layout_height="match_parent"/>
+</RelativeLayout>
