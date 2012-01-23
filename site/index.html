@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>&micro;siqke - PD &amp; Android instrument</title>
+		<link href='http://fonts.googleapis.com/css?family=Fjord+One|Quattrocento+Sans' rel='stylesheet' type='text/css'>
+		<style type="text/css">
+			body {
+				margin: 0;
+				padding: 0;
+				width: 800px;
+				margin-left: auto;
+				margin-right: auto;
+				background-color: #F0F0F0;
+				font-family: 'Quattrocento Sans', sans-serif;
+				color: #111;
+			}
+			#header {
+				height: 200px;
+				padding: 20px;
+				background-color: #D6EBE0;
+				border-bottom: 1px solid #7d9d7d;
+			}
+			#footer {
+				height: 30px;
+				border-top: 1px solid #7d9d7d;
+			}
+			h1, h2, h3, h4, h5 {
+				font-family: 'Fjord One', serif;
+				color: #143D29;
+			}
+			a:link {
+				color: #123725;
+			}
+			a:visited {
+				color: #123725;
+			}
+			a:hover {
+				color: #242;
+			}
+		</style>
+	</head>
+	<body>
+		<header id="header">
+			<h1>&micro;siqke synthesizer</h1>
+			<h3>Music instrument in PureData and Android</h3>
+		</header>
+		<div id="content">
+<p>
+This is the main instrument I (<a href="http://rjmarsan.com">rj marsan</a>) use for my band, <a href="http://shyguysays.com">Shy Guy Says</a>.  It's typically used with an android tablet app and a midi keyboard. it sounds pretty cool.
+</p>
+
+<img src="pdscreenshot.png"/>
+
+
+<p>
+<h3>How it works:</h3>
+I have two instruments on midi channels 2 and 3 (no idea why, I guess I always had stuff on channel 1, so it stuck).  They share presets, and if you want you can always just remove one.  They're each 8-note polyphonic.  Synthesis is mainly mixing two oscillators and octave apart, with various waveforms.  It has tremolo, vibrato, a full envelope (way more than ADSR), hp, lp, and a moog filter, as well as moog filter vibrato.  a bitcrusher, distortion, and fuzz are added, but I still don't think any of them sound that great.  Delay and reverb are there, although I don't think I ever use them.
+</p>
+
+<p>
+<h3>How it sounds</h3>
+Seriously, I use this in every one of my songs, so just check out <a href="shyguysays.com">my band's new album</a> to hear it in action.  If people bug me, I can put some sound samples up, but I honestly believe you can make it sound better than I can.
+</p>
+
+<img src="musiqke.png"/>
+
+<p>
+<h3>Tablet Setup</h3>
+To get the companion android tablet set up, make sure they're both on the same network (and make sure the network is Fast).  Lots of times you can just set up your laptop in ad-hoc mode.  The android app is set to listen on 9000 and broadcast on 8000.  For whatever reason, I have a terrible time sending OSC messages back to the tablet unless I hard-code the ip address, but your milage may vary.  Inside the __main.pd, there's a subpatch 'pd osc' that has the ip to send it to.
+</p>
+
+<p>
+<h3>Downloads</h3>
+I have no interest in packaging this into a super-easy-to-use&#8482; package.  So go check it out from github here: <a href="https://github.com/rjmarsan/Musiqke-pd-and-android-instrument">https://github.com/rjmarsan/Musiqke-pd-and-android-instrument</a>
+</p>
+
+<p>
+<h3>Requirements:</h3>
+<ul>
+<li><b>PD-Extended:</b> I try to keep it as vanilla as possible, but it uses mrpeach's OSC library, as well as the fantastic moog~ filter.  If you can get those extensions, it should work just fine with vanilla pd.</li>
+<li><b>Keyboard/OSCKeyboard sketch:</b> It uses MIDI to operate, but I put in a hook to allow it to run over OSC.  You can use the processing sketch (and thus would need <a href="http://processing.org">processing</a> I have to act as a keyboard for it.</li>
+<li><b>Android Tablet (optional), &gt;= Android 3.0, 10 inches or up:</b> The best part of this instrument (In my opinion) is the companion android app for it.  It just sends OSC, but it makes performing live a synch, with awesome preset switching and a kaoss-pad style xy-grid.  That being said, it DOESN'T do everything, and is really only meant for performances.  Again, totally optional.</li>
+</ul>
+</p>
+
+<p>
+for what it's worth, this code is totally BSD licensed. I'm sure there's lots of bugs.  email me/message me if you find them.
+</p>
+
+		</div>
+		<footer id="footer">
+			copyright 2012 <a href="http://rjmarsan.com">rj marsan</a>
+		</footer>
+	</body>
+</html>
