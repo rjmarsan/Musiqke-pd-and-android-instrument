@@ -14,8 +14,8 @@
 #X obj 212 203 r \$1-synth-tremolo-enable;
 #X obj -7 415 outlet~;
 #X obj 25 350 *~;
-#X obj 314 277 r \$1-synth-noteon;
-#X obj 342 313 r \$1-synth-noteoff;
+#X obj 307 336 r \$1-synth-noteon;
+#X obj 335 372 r \$1-synth-noteoff;
 #X obj 223 225 r \$1-synth-suboctave-waveform;
 #X obj 240 247 r \$1-synth-suboctave-mix;
 #X obj 231 22 loadbang;
@@ -29,7 +29,7 @@
 #X obj 468 38 t b f;
 #X obj 10 258 +~;
 #X obj 12 392 *~ 0.8;
-#X obj 308 367 ADSR \$1;
+#X obj 301 426 ADSR \$1;
 #N canvas 0 22 450 300 bendbs 0;
 #X obj 208 25 bendin;
 #X obj 190 86 pack f f;
@@ -57,6 +57,8 @@
 #X obj 70 67 r \$1-synth-vibrato-waveform-x;
 #X obj 178 165 r \$1-synth-tremolo-waveform-x;
 #X obj 75 375 r \$1-synth-volume;
+#X obj 260 268 r \$1-synth-suboctave-offset;
+#X obj 266 289 r \$1-synth-suboctave-hp;
 #X connect 0 0 28 0;
 #X connect 1 0 2 0;
 #X connect 2 0 32 1;
@@ -95,3 +97,5 @@
 #X connect 33 0 32 4;
 #X connect 34 0 32 9;
 #X connect 35 0 29 1;
+#X connect 36 0 32 14;
+#X connect 37 0 32 15;
