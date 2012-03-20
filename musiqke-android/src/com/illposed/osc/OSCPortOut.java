@@ -29,14 +29,43 @@
 
 package com.illposed.osc;
 
-import java.net.*;
 import java.io.IOException;
-import com.illposed.osc.utility.OSCByteArrayToJavaConverter;
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+import java.net.InetAddress;
+import java.net.SocketException;
+import java.net.UnknownHostException;
+import java.util.LinkedList;
 
 public class OSCPortOut extends OSCPort {
 
 	protected InetAddress address;
-
+	
+	public LinkedList<OSCPacket> queue = new LinkedList<OSCPacket>();
+	
+	protected class OffThreadDispatcher extends Thread {
+		public boolean  keepRunning = true;
+		public void run() {
+			while (keepRunning) {
+				while (!queue.isEmpty()) {
+					try {
+						OSCPacket packet = queue.removeFirst();
+						send(packet);
+					} catch (Exception e) {
+						queue.clear(); // WTF LETS GET OUT OF HERE
+						e.printStackTrace();
+					}
+				}
+				try {
+					Thread.sleep(100L);
+				} catch (InterruptedException e) {
+				}
+			}
+		}
+			
+	}
+	OffThreadDispatcher dispatch = new OffThreadDispatcher();
+	
 	/**
 	 * Create an OSCPort that sends to newAddress, newPort
 	 * @param newAddress InetAddress
@@ -46,6 +75,7 @@ public class OSCPortOut extends OSCPort {
 		socket = new DatagramSocket();
 		address = newAddress;
 		port = newPort;
+		dispatch.start();
 	}
 
 	/**
@@ -67,11 +97,15 @@ public class OSCPortOut extends OSCPort {
 		this(InetAddress.getLocalHost(), defaultSCOSCPort);
 	}
 	
+	public void sendAsync(OSCPacket packet) {
+		queue.add(packet);
+		dispatch.interrupt();
+	}
+	
 	/**
 	 * @param aPacket OSCPacket
 	 */
 	public void send(OSCPacket aPacket) throws IOException {
-		System.out.println("OSCPortOut is sending packet");
 		byte[] byteArray = aPacket.getByteArray();
 		DatagramPacket packet = 
 			new DatagramPacket(byteArray, byteArray.length,address,port);

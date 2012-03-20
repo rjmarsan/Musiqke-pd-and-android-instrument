@@ -64,11 +64,7 @@ public class OSCRadioButton extends RadioButton implements OnClickListener, OSCU
 	}
 	
 	private void sendMessage(OSCMessage message) {
-		try {
-			out.send(message);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		out.sendAsync(message);
 	}
 
 	@Override

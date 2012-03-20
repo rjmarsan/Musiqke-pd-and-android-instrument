@@ -1,12 +1,11 @@
 package com.rj.musiqke;
 
-import java.io.IOException;
 import java.util.Date;
 
 import android.content.Context;
 import android.os.Bundle;
 import android.util.AttributeSet;
-import android.view.View;
+import android.util.Log;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 
@@ -70,17 +69,14 @@ public class OSCSeekBar extends SeekBar implements OSCUIElement, OnSeekBarChange
 	}
 	
 	private void sendMessage(OSCMessage message) {
-		try {
-			out.send(message);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+			out.sendAsync(message);
 	}
 
 	@Override
 	public void onProgressChanged(SeekBar seekBar, int progress,
 			boolean fromUser) {
 		if (fromUser && out != null) {
+			Log.d("POOP", "OnProgressChanged: "+progress);
 			float value = (float)progress / (float)this.getMax();
 			sendMessage(new OSCMessage(message, new Object[] {value}));
 		}		
@@ -89,7 +85,7 @@ public class OSCSeekBar extends SeekBar implements OSCUIElement, OnSeekBarChange
 
 
 	@Override
-	public void onStartTrackingTouch(SeekBar seekBar) {
+	public void onStartTrackingTouch(SeekBar seekBar) {//set.point winning
 		// TODO Auto-generated method stub
 		
 	}

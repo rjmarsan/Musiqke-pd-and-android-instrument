@@ -104,11 +104,7 @@ public class OSCXYBox extends SurfaceView implements OSCUIElement, OnTouchListen
 	}
 	
 	private void sendMessage(OSCMessage message) {
-		try {
-			out.send(message);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+			out.sendAsync(message);
 	}
 	
 	private String makePath(int num) {

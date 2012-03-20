@@ -3,19 +3,29 @@ package com.rj.musiqke;
 import java.net.InetAddress;
 
 import android.app.ActionBar;
-import android.app.Activity;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.app.ActionBar.Tab;
-import android.app.ActionBar.TabListener;
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.FragmentTransaction;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.widget.EditText;
 
 import com.illposed.osc.OSCPortIn;
 import com.illposed.osc.OSCPortOut;
-import com.rj.musiqke.frags.OSCFragment;
 import com.rj.musiqke.frags.TabFragment;
 
 public class Musiqke extends Activity {
+	public final static String PREFS = "doop";
+	public final static String ADDRESS = "address";
 	OSCPortIn oscin;
 	OSCPortOut oscout;
 	
@@ -35,7 +45,12 @@ public class Musiqke extends Activity {
     	try {
     		oscin = new OSCPortIn(9000);
     		oscin.startListening();
-       		InetAddress out = InetAddress.getByAddress(new byte[] {(byte) 255,(byte) 255,(byte) 255,(byte) 255});
+    		SharedPreferences prefs = this.getSharedPreferences(PREFS, 0);
+    		String addr = prefs.getString(ADDRESS, "255.255.255.255");
+    		InetAddress out = InetAddress.getByName(addr);
+    		Log.d("KSJDFLSDKJF", "Addr is "+addr);
+       		//InetAddress out = InetAddress.getByAddress(new byte[] {(byte) 255,(byte) 255,(byte) 255,(byte) 255});
+       		//InetAddress out = InetAddress.getByAddress(new byte[] {(byte) 192,(byte) 168,(byte) 43,(byte) 202});
     		//InetAddress out = InetAddress.getByAddress(new byte[] {(byte) 192,(byte) 17,(byte) 96,(byte) 105}); //if broadcasting doesn't work, hardcode it here.
     		oscout = new OSCPortOut(out, 8000);
     	} catch (Exception e) {
@@ -72,6 +87,51 @@ public class Musiqke extends Activity {
 
     }
 
+    
+	@Override
+	public boolean onCreateOptionsMenu(final Menu menu) {
+	    final MenuInflater inflater = getMenuInflater();
+	    inflater.inflate(R.menu.menu, menu);
+	    return true;
+	}
+
+	@Override
+	public boolean onMenuItemSelected(final int featureId, final MenuItem item) {
+	    switch (item.getItemId()) {
+	    case R.id.address:
+	        showAddress(this);
+	        return true;
+	    }
+	    return false;
+	}
+	
+	public void showAddress(final Context context) { 
+		AlertDialog.Builder builder = new AlertDialog.Builder(context);
+		builder.setTitle("Select an IP Address");
+		final EditText textcontent = new EditText(context);
+		builder.setView(textcontent);
+		SharedPreferences prefs = this.getSharedPreferences(PREFS, 0);
+		String addr = prefs.getString(ADDRESS, "255.255.255.255");
+		textcontent.setText(addr);
+		
+		builder.setPositiveButton("Set", new OnClickListener() {
+			public void onClick(DialogInterface dialog, int which) {
+	    		SharedPreferences prefs = getSharedPreferences(PREFS, 0);
+	    		Editor edit = prefs.edit();
+	    		edit.putString(ADDRESS, textcontent.getText().toString());
+	    		edit.commit();
+				dialog.dismiss();
+			}});
+		
+		builder.setNegativeButton("Cancel", new OnClickListener() {
+			public void onClick(DialogInterface dialog, int which) {
+				dialog.dismiss();
+			}});
+
+		AlertDialog alert = builder.create();
+		
+		alert.show();
+	}    
     private void setupFragments() {
     	
         // setup Action Bar for tabs
