@@ -52,14 +52,14 @@
 #X connect 2 0 0 0;
 #X connect 4 0 3 0;
 #X restore 113 16 pd oscin;
-#X obj 257 144 instrument 3;
 #X obj 174 145 instrument 2;
+#X obj 257 144 instrument 3;
 #X connect 1 0 2 0;
 #X connect 1 1 2 1;
 #X connect 1 2 2 2;
 #X connect 2 0 3 0;
-#X connect 3 1 9 0;
-#X connect 3 2 8 0;
+#X connect 3 1 8 0;
+#X connect 3 2 9 0;
 #X connect 4 0 6 0;
 #X connect 6 0 0 0;
 #X connect 6 0 0 1;
