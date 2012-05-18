@@ -11,6 +11,7 @@ import android.graphics.Typeface;
 import android.graphics.Paint.Align;
 import android.graphics.Paint.Style;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
@@ -63,6 +64,8 @@ public class OSCXYBox extends SurfaceView implements OSCUIElement, OnTouchListen
 	float origy = -100000; 
 	int width;
 	int height;
+	long lastsend = 0L;
+	public final static long DONT_FLOOD_WAIT = 30L;
 	
 	private String getOSCTag() {
 		Object path = this.getTag();
@@ -177,14 +180,17 @@ public class OSCXYBox extends SurfaceView implements OSCUIElement, OnTouchListen
 
 	@Override
 	public boolean onTouch(View arg0, MotionEvent arg1) {
-		x = arg1.getX();
-		y = arg1.getY();
-		float oscx = (float)arg1.getX() / (float)this.getWidth();
-		float oscy = (float)arg1.getY() / (float)this.getHeight();
-		sendMessage(new OSCMessage(makePath(1), new Object[] {oscx}));
-		sendMessage(new OSCMessage(makePath(2), new Object[] {oscy}));
-		System.out.println("Sending to: "+makePath(1)+ " value:"+oscx);
-		System.out.println("Sending to: "+makePath(2)+ " value:"+oscy);
+		if (SystemClock.uptimeMillis() - lastsend > DONT_FLOOD_WAIT) {
+			x = arg1.getX();
+			y = arg1.getY();
+			float oscx = (float)arg1.getX() / (float)this.getWidth();
+			float oscy = (float)arg1.getY() / (float)this.getHeight();
+			sendMessage(new OSCMessage(makePath(1), new Object[] {oscx}));
+			sendMessage(new OSCMessage(makePath(2), new Object[] {oscy}));
+			System.out.println("Sending to: "+makePath(1)+ " value:"+oscx);
+			System.out.println("Sending to: "+makePath(2)+ " value:"+oscy);
+			lastsend = SystemClock.uptimeMillis();
+		}
 		return true;
 	}
 
